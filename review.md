@@ -7,8 +7,8 @@ This is a very interesting paper that researched the Deep-Q based DRL agents for
 4) ~~Figure 1, 2, 3: for the red numbers are they the maximum number of parts? and the arrows are they the movements? define them in the text.~~
 5) Table 1: it is name is not mentioned in the text.
 6) ~~Table 2: environment "Mayer-Classen-Endisch", why 1 AVG, 3 AVGs, and 4 AGVs are not tested? same for "1-machine-big". Also, "3-machine-loop" 4 AGVs is not tested.~~
-7) Page 15 - Line 45: 23 parts/hour. However, in the table is 23.6? for numbers some are same and some are rounded? check all numbers in the text, either put the exact digit or round with explanation.
-8) Figure 4: also the numbers are rounded on the bars are rounded?
+7) ~~Page 15 - Line 45: 23 parts/hour. However, in the table is 23.6? for numbers some are same and some are rounded? check all numbers in the text, either put the exact digit or round with explanation.~~
+8) ~~Figure 4: also the numbers are rounded on the bars are rounded?~~
 Thanks and good luck,
 
 
