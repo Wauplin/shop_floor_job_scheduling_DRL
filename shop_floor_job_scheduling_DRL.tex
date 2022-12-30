@@ -509,7 +509,7 @@ Finally, it is also worth mentioning that the baseline agents (FIFO, Nearest Nei
 
 \subsubsection{1-machine-big}
 
-With this configuration, we expected the FIFO agent to be tricked, while a Cost Table approach was supposed to tackle the problem raised by the long distances in the production plant. We confirmed this intuition, since they reached 23 parts/hour and 143.4 parts/hour respectively, the optimal throughput in the equilibrium state being 144 parts/hour. The same performance has been achieved by the trained agent. Results can be compared in figure \ref{fig:simple_cases_results}.
+With this configuration, we expected the FIFO agent to be tricked, while a Cost Table approach was supposed to tackle the problem raised by the long distances in the production plant. We confirmed this intuition, since they reached 23.6 parts/hour and 143.4 parts/hour respectively, the optimal throughput in the equilibrium state being 144 parts/hour. The same performance has been achieved by the trained agent. Results can be compared in figure \ref{fig:simple_cases_results}.
 
 For both Cost Table and DDQN approaches, the final policy in the equilibrium state is to have an AGV looping between the Source and the Machine entry and the other AGV looping between the Machine exit and the Sink, thus avoiding the long drive between Machine entry and exit.
 
@@ -531,7 +531,7 @@ The difficulty in this scenario is to manage the AGV(s) in order not to overload
 
 The 2-machines scenario seems quite easy to tackle for the static agents (see figure \ref{fig:grid_2_machines_results}). The Cost Table approach performs better with 1 AGV but starting from 2 AGVs, the processing time is more limiting than transportation, which means that even a sub-optimal policy is able to obtain the best theoretical throughput (144 pph). 
 
-The DDQN agent is able to reach FIFO/Nearest Neighbor performances with 1 AGV (115 pph) but is not optimal since Cost Table performs significantly better (123 pph). With 2 AGVs it is not optimal either, performing at 139 pph even though all static agents are already reaching 144 pph. Above that (3 and 4 AGVs), comparisons don't make sense, since all agents reach the limit.
+The DDQN agent is able to reach FIFO/Nearest Neighbor performances with 1 AGV (115.8 pph) but is not optimal since Cost Table performs significantly better (123.1 pph). With 2 AGVs it is not optimal either, performing at 128.9 pph even though all static agents are already reaching 143.4 pph. Above that (3 and 4 AGVs), comparisons don't make sense, since all agents reach the limit.
 
 \begin{figure}[ht]
   \includegraphics[width=1.0\textwidth]{results_grid_2_machines.png}
@@ -541,9 +541,9 @@ The DDQN agent is able to reach FIFO/Nearest Neighbor performances with 1 AGV (1
 
 \paragraph{4-machines scenario}
 
-The 4-machines scenario is similar to the previous one (see figure \ref{fig:grid_4_machines_results}). Cost Table performs better than other approaches with 1 AGV (96 pph vs 89) and then all static agents reach the limit (144 pph). 
+The 4-machines scenario is similar to the previous one (see figure \ref{fig:grid_4_machines_results}). Cost Table performs better than other approaches with 1 AGV (95.7 pph vs 88.8) and then all static agents reach the limit (143.5). 
 
-However, this scenario starts to show the limitation of the DDQN agent. It is able to learn how to manage the AGVs to transport parts and still avoid deadlocks, but in a sub-optimal way. The best results are achieved with 3 AGVs (139 pph), a better performance than when a 4th AGV was available (134 pph). 
+However, this scenario starts to show the limitation of the DDQN agent. It is able to learn how to manage the AGVs to transport parts and still avoid deadlocks, but in a sub-optimal way. The best results are achieved with 3 AGVs (138.9 pph), a better performance than when a 4th AGV was available (134.1 pph).
 
 \begin{figure}[ht]
   \includegraphics[width=1.0\textwidth]{results_grid_4_machines.png}
@@ -553,7 +553,7 @@ However, this scenario starts to show the limitation of the DDQN agent. It is ab
 
 \paragraph{6-machines scenario}
 
-In the 6 machines scenario, it is even more difficult for the DDQN to reach optimal performances -or at least similar to static agents- (see figure \ref{fig:grid_6_machines_results}). It is worth mentioning that even if the DDQN performs worse than Cost Table in all cases (69 vs 74 pph with 1 AGV, 79 vs 128 pph with 2, 117 vs 143 with 3 and 124 vs 143 with 4), it is still able to run the 12 hours without deadlocks.
+In the 6 machines scenario, it is even more difficult for the DDQN to reach optimal performances -or at least similar to static agents- (see figure \ref{fig:grid_6_machines_results}). It is worth mentioning that even if the DDQN performs worse than Cost Table in all cases (68.6 vs 74.1 pph with 1 AGV, 79.0 vs 127.8 pph with 2, 117.4 vs 143.2 with 3 and 124.0 vs 143.2 with 4), it is still able to run the 12 hours without deadlocks.
 
 \begin{figure}[ht]
   \includegraphics[width=1.0\textwidth]{results_grid_6_machines.png}
