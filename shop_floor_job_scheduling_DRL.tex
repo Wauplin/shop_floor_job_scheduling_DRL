@@ -247,13 +247,13 @@ The Cost Table algorithm is an extension of the Nearest Neighbor approach. Inste
 
 \subsubsection{Methodology}
 
-Our goal is to be able to compare a trained Agent against static algorithms in order to prove the ability of DRL to tackle the Vehicle Management problem in a modular production environment.
+Our goal is to assess the ability of Reinforcement Learning to tackle Vehicle Management problem in a modular production environment. To do so, we want to compare performances from a trained Agent against existing static algorithms on a same environment.
 
-We found out that static algorithms are highly vulnerable to the input clock $C_{\rm source}$. If $C_{\rm source}$ is too low, the AGVs will almost immediately overload the first machine with parts and run into a deadlock. On the contrary, if $C_{\rm source}$ is too high, the optimization problem doesn’t make sense anymore because it is too easy to get an output clock $C_{\rm sink}$ equal to $C_{\rm source}$. 
+However, while setting up our methodology, we found out that static algorithms are highly vulnerable to the input clock $C_{\rm source}$. If $C_{\rm source}$ is too low, the AGVs almost immediately overload the first machine with parts and run into a deadlock. On the contrary, if $C_{\rm source}$ is too high, the optimization problem is trivial as it is too easy to get an output clock $C_{\rm sink}$ equal to $C_{\rm source}$.
 
-In order to still be able to have baseline results to compare with, we first find the optimal $C_{\rm source}^*$ for each agent and each environment configuration. $C_{\rm source}^*$ is defined as the lowest input clock for which the simulation doesn’t run into a deadlock situation. We use a dichotomic search algorithm to find this value, rounded to 1 second. By construction, $C_{\rm sink}$ is necessarily equal or greater than $C_{\rm source}^*$. Once $C_{\rm source}^*$ is found, we run the simulation for 12 hours of production, gathering the metrics throuhout the run.
+In order to get comparable results, we need to determine the optimal source clock $C_{\rm source}^*$ that doesn't lead to deadlocks. For each agent and each environment configuration, we run the simulation multiple times with different input clocks. Then, we define $C_{\rm source}^*$ as the lowest input clock for which the simulation doesn't run into a deadlock situation. We use a dichotomic search algorithm to find this value, rounded to 1 second. For the Reinforcement Learning Agent, $C_{\rm source}$ is set to $0$ during both train and test phases. It is assumed that the Agent should learn how to avoid deadlocks.
 
-For the DRL Agent, $C_{\rm source}$ is set to $0$ during both, train and test phases. It is assumed that it should learn how to avoid deadlocks by not overloading the first machine.
+Finally, once we have $C_{\rm source}$ for each agent and each environment configuration, we simulate the production during 12 hours, gathering the metrics throughout the run.
 
 \section{Design of the DRL Agent}
 \label{sec:design_DRLagent}

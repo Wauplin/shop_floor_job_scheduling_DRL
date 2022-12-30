@@ -20,7 +20,7 @@ This study investigates the feasibility of deploying Deep-Q-based deep reinforce
 2) Add some papers published recently to the literature review. Also, more papers are needed to be reviewed.
 3) Some suggestions to improve the literature review section.
 4) Clarify and explain your work contributions and the research gap in an appropriate section such as at the end of the introduction.
-5) Describe the methodology in sub-section 2.3.3. more clear.
+5) ~~Describe the methodology in sub-section 2.3.3. more clear.~~
 6) What is the source of the conducted benchmark?
 7) Explain Figure 4 more.
 8) Provide some managerial insights.
